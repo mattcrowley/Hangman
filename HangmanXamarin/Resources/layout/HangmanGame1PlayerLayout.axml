@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:id="@+id/llPlayer1Game"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    android:clickable="true">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <ImageView
+            android:src="@drawable/transitiontest"
+            android:id="@+id/imageView1"
+            android:maxHeight="250dp"
+            android:cropToPadding="true"
+            android:adjustViewBounds="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="250dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="390.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/llGuessedWordContainer"
+            android:layout_marginRight="118.0dp">
+            <TextView
+                android:text="Word Guessed so far:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView1"
+                android:editable="false"
+                android:enabled="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/llWordToGuess"
+                android:minWidth="75px"
+                android:minHeight="75px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/space1"
+                android:minHeight="40dp" />
+            <TextView
+                android:text="Guesses Left"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textGuessesTitle" />
+            <TextView
+                android:text="TBD"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textNumGuessesLeft" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:text="Guessed Letters:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:editable="false"
+        android:enabled="true" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/guessedLetters"
+        android:hint="None"
+        android:enabled="true"
+        android:editable="false" />
+</LinearLayout>
