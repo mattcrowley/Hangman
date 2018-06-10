@@ -1,8 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/toolbar"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:minHeight="?android:attr/actionBarSize"
-    android:background="?android:attr/colorPrimary"
-    android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar"/>
+    android:layout_height="match_parent">
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/linearLayout1">
+    <ImageButton
+        android:src="@drawable/list"
+        android:id="@+id/toolbar_MenuButton"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:maxHeight="32dp" />
+    <TextView
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/toolbar_TitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+  </LinearLayout>
+</LinearLayout>

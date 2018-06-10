@@ -56,10 +56,16 @@ namespace HangmanXamarin
 			public const int imgGameOver01 = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int StickMan = 2130837507;
+			public const int imgHangingDeath = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int transitionTest = 2130837508;
+			public const int list = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int StickMan = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int transitionTest = 2130837510;
 			
 			static Drawable()
 			{
@@ -77,6 +83,9 @@ namespace HangmanXamarin
 			// aapt resource value: 0x7f06000b
 			public const int btnStart1PlayerGame = 2131099659;
 			
+			// aapt resource value: 0x7f06000e
+			public const int button1 = 2131099662;
+			
 			// aapt resource value: 0x7f06000c
 			public const int button2 = 2131099660;
 			
@@ -85,6 +94,9 @@ namespace HangmanXamarin
 			
 			// aapt resource value: 0x7f060009
 			public const int guessedLetters = 2131099657;
+			
+			// aapt resource value: 0x7f06000f
+			public const int imageButton1 = 2131099663;
 			
 			// aapt resource value: 0x7f060002
 			public const int imageView1 = 2131099650;
@@ -104,6 +116,15 @@ namespace HangmanXamarin
 			// aapt resource value: 0x7f060005
 			public const int llWordToGuess = 2131099653;
 			
+			// aapt resource value: 0x7f060017
+			public const int menuBackToMainMenu = 2131099671;
+			
+			// aapt resource value: 0x7f060015
+			public const int menuNewGame = 2131099669;
+			
+			// aapt resource value: 0x7f060016
+			public const int menuOptions = 2131099670;
+			
 			// aapt resource value: 0x7f060006
 			public const int space1 = 2131099654;
 			
@@ -116,14 +137,20 @@ namespace HangmanXamarin
 			// aapt resource value: 0x7f060004
 			public const int textView1 = 2131099652;
 			
-			// aapt resource value: 0x7f06000e
-			public const int toolbar = 2131099662;
-			
-			// aapt resource value: 0x7f06000f
-			public const int trans0 = 2131099663;
-			
 			// aapt resource value: 0x7f060010
-			public const int trans1 = 2131099664;
+			public const int toolbar = 2131099664;
+			
+			// aapt resource value: 0x7f060011
+			public const int toolbar_MenuButton = 2131099665;
+			
+			// aapt resource value: 0x7f060012
+			public const int toolbar_TitleText = 2131099666;
+			
+			// aapt resource value: 0x7f060013
+			public const int trans0 = 2131099667;
+			
+			// aapt resource value: 0x7f060014
+			public const int trans1 = 2131099668;
 			
 			static Id()
 			{
@@ -160,14 +187,39 @@ namespace HangmanXamarin
 			}
 		}
 		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int GameplayMenu = 2131034112;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
+			{
+			}
+		}
+		
 		public partial class String
 		{
 			
 			// aapt resource value: 0x7f040001
 			public const int ApplicationName = 2130968577;
 			
+			// aapt resource value: 0x7f040004
+			public const int BackToMainMenu = 2130968580;
+			
 			// aapt resource value: 0x7f040000
 			public const int Hello = 2130968576;
+			
+			// aapt resource value: 0x7f040002
+			public const int NewGame = 2130968578;
+			
+			// aapt resource value: 0x7f040003
+			public const int Options = 2130968579;
 			
 			static String()
 			{
@@ -175,22 +227,6 @@ namespace HangmanXamarin
 			}
 			
 			private String()
-			{
-			}
-		}
-		
-		public partial class Style
-		{
-			
-			// aapt resource value: 0x7f050000
-			public const int MyTheme = 2131034112;
-			
-			static Style()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Style()
 			{
 			}
 		}

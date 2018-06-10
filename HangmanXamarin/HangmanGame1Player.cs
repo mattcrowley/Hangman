@@ -26,6 +26,8 @@ namespace HangmanXamarin
         private TransitionDrawable _drawable; // animated img to handle the hangman image
         private Toast _userInputToast;
 
+        private ImageView _menuButton; // shows a popup menu of in game options
+
         private int _numGuesses = 0;
         private TextView _numGuessesTextView;
         private int _totalGuessesAvail;
@@ -54,14 +56,59 @@ namespace HangmanXamarin
                 StartNewGame();
             }
 
-            /* // TODO: Create a toolbar to use to switch languages, get a new word, etc 
-            //SetActionBar(new Toolbar())
-            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-            SetActionBar(toolbar);
-            ActionBar.Title = "My Toolbar";
-            // InputMethodManager inputManager = (InputMethodManager)GetSystemService(Context.InputMethodService);
-            //inputManager.ToggleSoftInput(ShowFlags.Forced, HideSoftInputFlags.ImplicitOnly);
-            */
+            // Create an ActionBar to use to switch languages, get a new word, etc 
+            ActionBarOverride newActionBar = new ActionBarOverride();
+            var a = ActionBar;
+            newActionBar.CreateActionBarWithTitleAndMenuButton(ref a, this, "Hangman");
+
+            _menuButton = ActionBar.CustomView.FindViewById<ImageView>(Resource.Id.toolbar_MenuButton);
+            _menuButton.Click += MenuButton_Click;
+        }
+
+        /// <summary>
+        /// Handles the user clicking on the Menu button in the Action Bar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+            PopupMenu menu = new PopupMenu(this, _menuButton);
+            menu.Inflate(Resource.Menu.GameplayMenu);
+
+            menu.MenuItemClick += Menu_MenuItemClick;
+
+            menu.Show();
+        }
+
+        /// <summary>
+        /// Handles each individual menu item in the list. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Menu_MenuItemClick(object sender, PopupMenu.MenuItemClickEventArgs e)
+        {
+            Console.WriteLine("{0} selected", e.Item.TitleFormatted);
+
+            switch (e.Item.ItemId)
+            {
+                case Resource.Id.menuNewGame:
+                    Console.WriteLine("New Game was chosen. To Be Implemented");
+                    // Prompt user if they are sure
+                    // Handle the new game menu press
+                    break;
+                case Resource.Id.menuOptions:
+                    Console.WriteLine("Options was chosen. To Be Implemented");
+                    // Handle showing the options menu
+                    break;
+                case Resource.Id.menuBackToMainMenu:
+                    Console.WriteLine("Back to main menu was chosen. To Be Implemented");
+                    // Prompt user if they are sure
+                    // Handle cancelling our current game, and reshowing the main menu
+                    break;
+                default:
+                    Console.WriteLine("ERROR! Unhandled menu item!");
+                    break;
+            }
         }
 
         protected override void OnSaveInstanceState(Bundle outState)
@@ -72,6 +119,15 @@ namespace HangmanXamarin
         protected override void OnRestoreInstanceState(Bundle savedInstanceState)
         {
             base.OnRestoreInstanceState(savedInstanceState);
+        }
+
+        /// <summary>
+        /// Override of the back button press while in game. 
+        /// </summary>
+        public override void OnBackPressed()
+        {
+            // TODO: Might be best to either minimize the app, or prompt if user wants to exit the app or just minimize
+            //base.OnBackPressed();
         }
 
         /// <summary>
@@ -301,7 +357,6 @@ namespace HangmanXamarin
             _lettersToShowOnUI.Text = string.Empty;
             LinearLayout layout = FindViewById<LinearLayout>(Resource.Id.llWordToGuess);
             layout.RemoveAllViews();
-            CreateToastCenterScreen(string.Empty);
 
             // Reset some variables
             _characters = new List<EditText>();

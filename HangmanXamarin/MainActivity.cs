@@ -4,7 +4,7 @@ using Android.OS;
 
 namespace HangmanXamarin
 {
-    [Activity(Label = "HangmanXamarin", MainLauncher = true, Icon = "@drawable/StickMan")]
+    [Activity(Label = "HangmanXamarin", MainLauncher = true, Icon = "@drawable/imgHangingDeath")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)

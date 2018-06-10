@@ -2,4 +2,7 @@
 <resources>
     <string name="Hello">Hello World, Click Me!</string>
     <string name="ApplicationName">HangmanXamarin</string>
+    <string name="NewGame">New Game</string>
+    <string name="Options">Options</string>
+    <string name="BackToMainMenu">Back to main menu</string>
 </resources>

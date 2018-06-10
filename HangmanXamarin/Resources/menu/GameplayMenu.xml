@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>  
+<menu xmlns:android="http://schemas.android.com/apk/res/android">  
+  
+  <!-- Add menu Item 1 -->  
+  <item android:id="@+id/menuNewGame"  
+        android:title="@string/NewGame"/>  
+    
+  <!-- Add menu Item 2 -->  
+  <item android:id="@+id/menuOptions"  
+         android:title="@string/Options"/>  
+  
+  <!-- Add menu Item 3 -->  
+  <item android:id="@+id/menuBackToMainMenu"  
+        android:title="@string/BackToMainMenu"/>  
+  
+</menu>   
